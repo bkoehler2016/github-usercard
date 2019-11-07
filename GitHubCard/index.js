@@ -134,7 +134,6 @@ const myfollowersArray = [
   'julieantonio',
   'jschaben',
   'dreampoetlee',
-  'sincere27601',
   'kjdschneider',
   'Heart8reak',
   'Astrodon',
