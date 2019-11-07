@@ -81,4 +81,15 @@ function gitCards(data) {
   bio.textContent = `Bio: ${data.bio}`;
 
   //Create Structure and append to the DOM
+
+  newCard.appendChild(newImg);
+  newCard.appendChild(newCardInfo);
+  newCardInfo.appendChild(name);
+  newCardInfo.appendChild(username);
+  newCardInfo.appendChild(location);
+  newCardInfo.appendChild(profile);
+  newCardInfo.appendChild(followers);
+  newCardInfo.appendChild(following);
+  newCardInfo.appendChild(bio);
+  newCardInfo.appendChild(profileUrl);
 }
