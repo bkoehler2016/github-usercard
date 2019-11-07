@@ -141,7 +141,8 @@ const myfollowersArray = [
   'MAllen07',
   'JaredBrown1',
   'ndailey000',
-  'richardmachado'
+  'richardmachado',
+  'bkoehler2016'
 ];
 
 myfollowersArray.forEach(myfollower => {
