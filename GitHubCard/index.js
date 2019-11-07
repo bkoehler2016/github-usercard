@@ -68,4 +68,6 @@ function gitCards(data) {
     followers = document.createElement("p"),
     following = document.createElement("p"),
     bio = document.createElement("p");
+
+  //setting content
 }
