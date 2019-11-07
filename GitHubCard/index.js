@@ -104,4 +104,55 @@ function gitCards(data) {
 }
 // setup the Array
 
-const followersArray = [];
+const entryPoint = document.querySelector('.cards');
+
+// this is follower git Card they gave us
+
+// const followersArray = [
+//   'tetondan',
+//   'dustinmyers',
+//   'justsml',
+//   'luishrd',
+//   'bigknell'
+// ];
+// followersArray.forEach(follower => {
+//   axios
+//     .get(`https://api.github.com/users/${follower}`)
+//     .then(response => {
+//       console.log(response);
+//       const cards = document.querySelector('.cards');
+//       cards.append(gitCards(response.data));
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// });
+
+// this is my gitCard
+
+const myfollowersArray = [
+  'julieantonio',
+  'jschaben',
+  'dreampoetlee',
+  'sincere27601',
+  'kjdschneider',
+  'Heart8reak',
+  'Astrodon',
+  'MAllen07',
+  'JaredBrown1',
+  'ndailey000',
+  'richardmachado'
+];
+
+myfollowersArray.forEach(myfollower => {
+  axios
+    .get(`https://api.github.com/users/${myfollower}`)
+    .then(response => {
+      console.log(response);
+      const cards = document.querySelector('.cards');
+      cards.append(gitCards(response.data));
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
