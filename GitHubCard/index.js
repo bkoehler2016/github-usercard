@@ -53,3 +53,19 @@ const followersArray = [];
   luishrd
   bigknell
 */
+
+// Setup the function and create components
+
+function gitCards(data) {
+  const newCard = document.createElement("div"),
+    newImg = document.createElement("img"),
+    newCardInfo = document.createElement("div"),
+    name = document.createElement("h3"),
+    username = document.createElement("p"),
+    location = document.createElement("p"),
+    profile = document.createElement("p"),
+    profileUrl = document.createElement("a"),
+    followers = document.createElement("p"),
+    following = document.createElement("p"),
+    bio = document.createElement("p");
+}
