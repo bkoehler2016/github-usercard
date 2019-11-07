@@ -55,6 +55,10 @@
 // Setup the function and create components
 
 function gitCards(data) {
+  function checkIfNull(str) {
+    if (str) return str;
+    return '';
+  }
   const newCard = document.createElement('div'),
     newImg = document.createElement('img'),
     newCardInfo = document.createElement('div'),
@@ -71,12 +75,12 @@ function gitCards(data) {
   newImg.src = data.avatar_url;
   name.textContent = data.name;
   username.textContent = data.login;
-  location.textContent = `Location: ${data.location}`;
-  profile.textContent = `Profile: ${data.name}`;
+  location.textContent = `Location: ${checkIfNull(data.location)}`;
+  profile.textContent = `Profile: ${checkIfNull(data.name)}`;
   profileUrl.textContent = `Link: ${data.html_url}`;
-  followers.textContent = `Followers: ${data.followers}`;
-  following.textContent = `Following: ${data.following}`;
-  bio.textContent = `Bio: ${data.bio}`;
+  followers.textContent = `Followers: ${checkIfNull(data.followers)}`;
+  following.textContent = `Following: ${checkIfNull(data.following)}`;
+  bio.textContent = `Bio: ${checkIfNull(data.bio)}`;
 
   //Create Structure and append to the DOM
 
@@ -130,29 +134,23 @@ const entryPoint = document.querySelector('.cards');
 
 // this is my gitCard
 
-const myfollowersArray = [
-  'julieantonio',
-  'jschaben',
-  'dreampoetlee',
-  'kjdschneider',
-  'Heart8reak',
-  'Astrodon',
-  'MAllen07',
-  'JaredBrown1',
-  'ndailey000',
-  'richardmachado',
-  'bkoehler2016'
-];
+const cards = document.querySelector('.cards');
 
-myfollowersArray.forEach(myfollower => {
-  axios
-    .get(`https://api.github.com/users/${myfollower}`)
-    .then(response => {
-      console.log(response);
-      const cards = document.querySelector('.cards');
-      cards.append(gitCards(response.data));
-    })
-    .catch(error => {
-      console.log(error);
-    });
+axios.get('https://api.github.com/users/bkoehler2016').then(response => {
+  console.log(response.data);
+  cards.appendChild(gitCards(response.data));
 });
+
+//My Follower's Cards
+axios
+  .get('https://api.github.com/users/bkoehler2016/followers')
+  .then(response => {
+    response.data.forEach(element => {
+      const newGitUserCard = new gitCards(element);
+      cards.appendChild(newGitUserCard);
+    });
+  })
+
+  .catch(you_did_wrong => {
+    console.log(you_did_wrong);
+  });
