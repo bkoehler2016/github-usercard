@@ -57,17 +57,28 @@ const followersArray = [];
 // Setup the function and create components
 
 function gitCards(data) {
-  const newCard = document.createElement("div"),
-    newImg = document.createElement("img"),
-    newCardInfo = document.createElement("div"),
-    name = document.createElement("h3"),
-    username = document.createElement("p"),
-    location = document.createElement("p"),
-    profile = document.createElement("p"),
-    profileUrl = document.createElement("a"),
-    followers = document.createElement("p"),
-    following = document.createElement("p"),
-    bio = document.createElement("p");
+  const newCard = document.createElement('div'),
+    newImg = document.createElement('img'),
+    newCardInfo = document.createElement('div'),
+    name = document.createElement('h3'),
+    username = document.createElement('p'),
+    location = document.createElement('p'),
+    profile = document.createElement('p'),
+    profileUrl = document.createElement('a'),
+    followers = document.createElement('p'),
+    following = document.createElement('p'),
+    bio = document.createElement('p');
 
   //setting content
+  newImg.src = data.avatar_url;
+  name.textContent = data.name;
+  username.textContent = data.login;
+  location.textContent = `Location: ${data.location}`;
+  profile.textContent = `Profile: ${data.name}`;
+  profileUrl.textContent = `Link: ${data.html_url}`;
+  followers.textContent = `Followers: ${data.followers}`;
+  following.textContent = `Following: ${data.following}`;
+  bio.textContent = `Bio: ${data.bio}`;
+
+  //Create Structure and append to the DOM
 }
