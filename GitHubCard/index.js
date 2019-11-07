@@ -24,8 +24,6 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
-
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
 
@@ -92,4 +90,18 @@ function gitCards(data) {
   newCardInfo.appendChild(following);
   newCardInfo.appendChild(bio);
   newCardInfo.appendChild(profileUrl);
+
+  //applying styles and classes
+
+  newCard.classList.add('card');
+  newCardInfo.classList.add('card-info');
+  name.classList.add('name');
+  username.classList.add('username');
+
+  // event handlers
+
+  return newCard;
 }
+// setup the Array
+
+const followersArray = [];
