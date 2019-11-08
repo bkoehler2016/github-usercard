@@ -118,7 +118,8 @@ const followersArray = [
   'kjdschneider',
   'Catherinesjkim',
   'jschaben',
-  'JaredBrown1'
+  'JaredBrown1',
+  'Rrawla2'
 ];
 followersArray.forEach(follower => {
   axios.get(`https://api.github.com/users/${follower}`)
