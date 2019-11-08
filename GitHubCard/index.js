@@ -142,8 +142,7 @@ axios.get('https://api.github.com/users/bkoehler2016').then(response => {
 });
 
 //My Follower's Cards
-axios
-  .get(`https://api.github.com/users/bkoehler2016/followers`)
+axios.get(`https://api.github.com/users/bkoehler2016/followers`)
   .then(response => {
     response.data.forEach(element => {
       axios.get(element.url);
