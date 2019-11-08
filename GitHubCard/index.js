@@ -113,11 +113,11 @@ const entryPoint = document.querySelector('.cards');
 // this is follower git Card they gave us changed with my own followers
 
 const followersArray = [
-  'tetondan',
-  'dustinmyers',
-  'justsml',
-  'luishrd',
-  'bigknell',
+  'julieantonio',
+  'kjdschneider',
+  'Heart8reak',
+  'jschaben',
+  'Catherinesjkim',
 ];
 followersArray.forEach(follower => {
   axios.get(`https://api.github.com/users/${follower}`)
