@@ -117,14 +117,13 @@ const followersArray = [
   'Heart8reak',
   'kjdschneider',
   'Catherinesjkim',
-  'jschaben'
+  'jschaben',
+  'JaredBrown1'
 ];
 followersArray.forEach(follower => {
-  axios
-    .get(`https://api.github.com/users/${follower}`)
+  axios.get(`https://api.github.com/users/${follower}`)
     .then(response => {
       console.log(response);
-      const cards = document.querySelector('.cards');
       cards.append(gitCards(response.data));
     })
     .catch(error => {
