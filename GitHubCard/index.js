@@ -145,7 +145,7 @@ axios.get('https://api.github.com/users/bkoehler2016').then(response => {
 // axios.get(`https://api.github.com/users/bkoehler2016/followers`)
 //   .then(response => {
 //     response.data.forEach(element => {
-//       axios.get(element.url);
+//       axios.get(element.login);
 //       const newGitUserCard = new gitCards(element);
 //       cards.appendChild(newGitUserCard);
 //       console.log(element);
