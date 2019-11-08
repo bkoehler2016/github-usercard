@@ -110,7 +110,7 @@ function gitCards(data) {
 
 const entryPoint = document.querySelector('.cards');
 
-// this is follower git Card they gave us
+// this is follower git Card they gave us changed with my own followers
 
 const followersArray = [
   'julieantonio',
