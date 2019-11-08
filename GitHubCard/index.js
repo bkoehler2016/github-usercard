@@ -142,16 +142,16 @@ axios.get('https://api.github.com/users/bkoehler2016').then(response => {
 
 
 //My Follower's Cards
-axios.get(`https://api.github.com/users/bkoehler2016/followers`)
-  .then(response => {
-    response.data.forEach(element => {
-      axios.get(element.url);
-      const newGitUserCard = new gitCards(element);
-      cards.appendChild(newGitUserCard);
-      console.log(element);
-    });
-  })
+// axios.get(`https://api.github.com/users/bkoehler2016/followers`)
+//   .then(response => {
+//     response.data.forEach(element => {
+//       axios.get(element.url);
+//       const newGitUserCard = new gitCards(element);
+//       cards.appendChild(newGitUserCard);
+//       console.log(element);
+//     });
+//   })
 
-  .catch(you_did_wrong => {
-    console.log(you_did_wrong);
-  });
+//   .catch(you_did_wrong => {
+//     console.log(you_did_wrong);
+//   });
