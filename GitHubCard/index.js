@@ -112,25 +112,23 @@ const entryPoint = document.querySelector('.cards');
 
 // this is follower git Card they gave us changed with my own followers
 
-// const followersArray = [
-//   'julieantonio',
-//   'Heart8reak',
-//   'kjdschneider',
-//   'Catherinesjkim',
-//   'jschaben',
-//   'JaredBrown1',
-//   'Rrawla2'
-// ];
-// followersArray.forEach(follower => {
-//   axios.get(`https://api.github.com/users/${follower}`)
-//     .then(response => {
-//       console.log(response);
-//       cards.append(gitCards(response.data));
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// });
+const followersArray = [
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell',
+];
+followersArray.forEach(follower => {
+  axios.get(`https://api.github.com/users/${follower}`)
+    .then(response => {
+      console.log(response);
+      cards.append(gitCards(response.data));
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 
 // this is my gitCard
 
@@ -141,6 +139,8 @@ axios.get('https://api.github.com/users/bkoehler2016').then(response => {
   cards.appendChild(gitCards(response.data));
 });
 
+
+
 //My Follower's Cards
 axios.get(`https://api.github.com/users/bkoehler2016/followers`)
   .then(response => {
@@ -148,6 +148,7 @@ axios.get(`https://api.github.com/users/bkoehler2016/followers`)
       axios.get(element.url);
       const newGitUserCard = new gitCards(element);
       cards.appendChild(newGitUserCard);
+      console.log(element);
     });
   })
 
